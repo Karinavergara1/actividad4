@@ -59,11 +59,10 @@ def move():
         if abs(target - ball) > 13:
             targets.append(target)
 
-    draw()
+if not inside(target):
+            target.x = 200
 
-    for target in targets:
-        if not inside(target):
-            return
+    draw()
 
     ontimer(move, 50)
 
@@ -74,4 +73,5 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
+
 
